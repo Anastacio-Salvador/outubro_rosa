@@ -1,0 +1,881 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #382832;
+    background: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    font: inherit;
+}
+
+
+/* =====================================================
+   VARIÁVEIS
+===================================================== */
+
+:root {
+    --pink: #e85b91;
+    --pink-dark: #c83e72;
+    --pink-light: #fff0f6;
+    --pink-soft: #fde2ec;
+
+    --dark: #382832;
+    --gray: #70656b;
+    --white: #ffffff;
+
+    --container: 1150px;
+
+    --shadow:
+        0 15px 40px rgba(80, 30, 55, 0.10);
+
+    --radius: 22px;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container {
+    width: min(90%, var(--container));
+    margin: auto;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid #f4dce6;
+}
+
+.nav {
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 800;
+
+    color: var(--pink-dark);
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo span {
+    font-size: 1.7rem;
+}
+
+.menu {
+    display: flex;
+    gap: 32px;
+}
+
+.menu a {
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    color: var(--dark);
+
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: var(--pink);
+}
+
+.menu-btn {
+    display: none;
+
+    border: 0;
+    background: transparent;
+
+    font-size: 1.8rem;
+
+    cursor: pointer;
+
+    color: var(--dark);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(232, 91, 145, 0.15),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #fff7fa,
+            #ffffff
+        );
+}
+
+.hero-content {
+    display: grid;
+
+    grid-template-columns: 1.2fr 0.8fr;
+
+    align-items: center;
+
+    gap: 80px;
+
+    padding: 80px 0;
+}
+
+.tag,
+.section-label {
+    display: inline-block;
+
+    color: var(--pink-dark);
+
+    font-size: 0.78rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    max-width: 700px;
+
+    font-size: clamp(2.6rem, 6vw, 5rem);
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: var(--pink);
+}
+
+.hero-text > p {
+    max-width: 620px;
+
+    color: var(--gray);
+
+    font-size: 1.1rem;
+
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =====================================================
+   BOTÕES
+===================================================== */
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 50px;
+
+    padding: 0 25px;
+
+    border-radius: 100px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.btn-primary {
+    color: white;
+
+    background: var(--pink);
+
+    box-shadow:
+        0 10px 25px rgba(232, 91, 145, 0.3);
+}
+
+.btn-primary:hover {
+    background: var(--pink-dark);
+
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    color: var(--pink-dark);
+
+    border: 2px solid #efbdd0;
+}
+
+.btn-outline:hover {
+    background: var(--pink-light);
+}
+
+
+/* =====================================================
+   HERO CARD
+===================================================== */
+
+.hero-card {
+    min-height: 390px;
+
+    padding: 50px 35px;
+
+    border-radius: 40px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #e85b91,
+            #c83e72
+        );
+
+    color: white;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    box-shadow:
+        0 25px 60px rgba(200, 62, 114, 0.25);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.hero-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    top: -80px;
+    right: -80px;
+}
+
+.hero-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    bottom: -60px;
+    left: -60px;
+}
+
+.ribbon {
+    font-size: 5rem;
+
+    margin-bottom: 20px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+.heart {
+    font-size: 2rem;
+
+    margin-bottom: 10px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+.hero-card h3 {
+    font-size: 2rem;
+
+    margin-bottom: 10px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+.hero-card p {
+    max-width: 300px;
+
+    opacity: 0.9;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+.section {
+    padding: 100px 0;
+}
+
+.section-pink {
+    background: var(--pink-light);
+}
+
+.section-heading {
+    max-width: 700px;
+
+    margin-bottom: 55px;
+}
+
+.section-heading h2,
+.symptoms h2,
+.support h2 {
+    font-size: clamp(2rem, 4vw, 3.3rem);
+
+    line-height: 1.15;
+
+    margin-bottom: 20px;
+}
+
+.section-heading p,
+.symptoms-text > p,
+.support p {
+    color: var(--gray);
+
+    font-size: 1.05rem;
+}
+
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.info-card {
+    padding: 35px;
+
+    border: 1px solid #f2dce5;
+
+    border-radius: var(--radius);
+
+    background: white;
+
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: var(--shadow);
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+
+    display: grid;
+    place-items: center;
+
+    background: var(--pink-light);
+
+    border-radius: 18px;
+
+    font-size: 1.6rem;
+
+    margin-bottom: 25px;
+}
+
+.info-card h3 {
+    margin-bottom: 12px;
+
+    font-size: 1.3rem;
+}
+
+.info-card p {
+    color: var(--gray);
+}
+
+
+/* =====================================================
+   SINTOMAS
+===================================================== */
+
+.symptoms {
+    display: grid;
+
+    grid-template-columns:
+        0.8fr 1.2fr;
+
+    gap: 80px;
+
+    align-items: start;
+}
+
+.text-link {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    color: var(--pink-dark);
+
+    font-weight: 700;
+}
+
+.symptoms-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.symptom {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 20px 25px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    box-shadow: 0 8px 25px rgba(100, 40, 65, 0.06);
+}
+
+.symptom span {
+    min-width: 42px;
+    height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: var(--pink-soft);
+
+    color: var(--pink-dark);
+
+    font-size: 0.8rem;
+
+    font-weight: 800;
+}
+
+.symptom p {
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   PREVENÇÃO
+===================================================== */
+
+.prevention-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.prevention-card {
+    padding: 30px;
+
+    border-radius: var(--radius);
+
+    background: #fff7fa;
+
+    border: 1px solid #f5dce6;
+}
+
+.number {
+    display: inline-block;
+
+    margin-bottom: 40px;
+
+    color: var(--pink);
+
+    font-size: 1.1rem;
+
+    font-weight: 900;
+}
+
+.prevention-card h3 {
+    font-size: 1.2rem;
+
+    margin-bottom: 12px;
+}
+
+.prevention-card p {
+    color: var(--gray);
+
+    font-size: 0.95rem;
+}
+
+
+/* =====================================================
+   QUOTE
+===================================================== */
+
+.quote-section {
+    padding: 110px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d8497f,
+            #b82f64
+        );
+
+    color: white;
+
+    text-align: center;
+}
+
+.quote {
+    max-width: 850px;
+
+    margin: auto;
+}
+
+.quote-icon {
+    font-family: Georgia, serif;
+
+    font-size: 5rem;
+
+    line-height: 0.5;
+
+    opacity: 0.5;
+}
+
+.quote h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+
+    line-height: 1.15;
+
+    margin: 30px 0 20px;
+}
+
+.quote p {
+    opacity: 0.9;
+
+    font-size: 1.05rem;
+}
+
+
+/* =====================================================
+   APOIO
+===================================================== */
+
+.support {
+    padding: 60px;
+
+    border-radius: 30px;
+
+    background: var(--pink-light);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 40px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+    background: #291c23;
+
+    color: white;
+
+    padding-top: 60px;
+}
+
+.footer-content {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+    padding-bottom: 40px;
+}
+
+.footer h3 {
+    margin-bottom: 10px;
+}
+
+.footer p {
+    color: #cbbfc4;
+}
+
+.footer-links {
+    display: flex;
+
+    gap: 25px;
+
+    align-items: center;
+}
+
+.footer-links a {
+    color: #d9cdd2;
+
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.copyright {
+    border-top: 1px solid rgba(255,255,255,0.1);
+
+    padding: 25px 0;
+}
+
+.copyright p {
+    font-size: 0.85rem;
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE
+===================================================== */
+
+@media (max-width: 950px) {
+
+    .hero-content {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .hero-card {
+        max-width: 550px;
+
+        width: 100%;
+
+        margin: auto;
+    }
+
+    .cards {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .prevention-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .symptoms {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .nav {
+        height: 68px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .menu {
+        position: absolute;
+
+        top: 68px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 20px;
+
+        background: white;
+
+        border-bottom: 1px solid #f1dce5;
+
+        display: none;
+
+        flex-direction: column;
+
+        gap: 18px;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-content {
+        padding: 70px 0;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .section {
+        padding: 75px 0;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .prevention-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .support {
+        padding: 35px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .container {
+        width: 88%;
+    }
+
+    .hero h1 {
+        font-size: 2.35rem;
+
+        letter-spacing: -1px;
+    }
+
+    .hero-text > p {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .hero-card {
+        min-height: 330px;
+
+        padding: 35px 25px;
+    }
+
+    .symptom {
+        align-items: flex-start;
+    }
+
+  }
